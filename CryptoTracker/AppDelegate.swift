@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Making the CryptoTableViewController as root view controller.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let cryptoTableVC = CryptoTableViewController()
+        window?.rootViewController = cryptoTableVC
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
