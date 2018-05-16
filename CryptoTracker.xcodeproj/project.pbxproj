@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B05401E120AB34D40023770A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05401E020AB34D40023770A /* AppDelegate.swift */; };
-		B05401E320AB34D40023770A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05401E220AB34D40023770A /* ViewController.swift */; };
-		B05401E620AB34D40023770A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05401E420AB34D40023770A /* Main.storyboard */; };
 		B05401E820AB34D60023770A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05401E720AB34D60023770A /* Assets.xcassets */; };
 		B05401EB20AB34D60023770A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05401E920AB34D60023770A /* LaunchScreen.storyboard */; };
+		B09C48DB20AC87630090EDDD /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */; };
+		B09C48DD20AC89060090EDDD /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C48DC20AC89060090EDDD /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B05401DD20AB34D40023770A /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05401E020AB34D40023770A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B05401E220AB34D40023770A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B05401E520AB34D40023770A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B05401E720AB34D60023770A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B05401EA20AB34D60023770A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B05401EC20AB34D60023770A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
+		B09C48DC20AC89060090EDDD /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				B05401E020AB34D40023770A /* AppDelegate.swift */,
-				B05401E220AB34D40023770A /* ViewController.swift */,
-				B05401E420AB34D40023770A /* Main.storyboard */,
+				B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */,
+				B09C48DC20AC89060090EDDD /* CoinData.swift */,
 				B05401E720AB34D60023770A /* Assets.xcassets */,
 				B05401E920AB34D60023770A /* LaunchScreen.storyboard */,
 				B05401EC20AB34D60023770A /* Info.plist */,
@@ -124,7 +124,6 @@
 			files = (
 				B05401EB20AB34D60023770A /* LaunchScreen.storyboard in Resources */,
 				B05401E820AB34D60023770A /* Assets.xcassets in Resources */,
-				B05401E620AB34D40023770A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05401E320AB34D40023770A /* ViewController.swift in Sources */,
+				B09C48DD20AC89060090EDDD /* CoinData.swift in Sources */,
+				B09C48DB20AC87630090EDDD /* CryptoTableViewController.swift in Sources */,
 				B05401E120AB34D40023770A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B05401E420AB34D40023770A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B05401E520AB34D40023770A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B05401E920AB34D60023770A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
