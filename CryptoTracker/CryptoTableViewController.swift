@@ -24,6 +24,7 @@ class CryptoTableViewController: UITableViewController {
         let cell = UITableViewCell()
         let coin = CoinData.shared.coins[indexPath.row]
         cell.textLabel?.text = coin.symbol
+        cell.imageView?.image = coin.image
         return cell
     }
 
