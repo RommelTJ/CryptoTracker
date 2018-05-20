@@ -13,6 +13,7 @@ class CoinData {
 
     static let shared = CoinData()
     var coins = [Coin]()
+    weak var delegate: CoinDataDelegate?
     
     private init() {
         let symbols = ["BTC", "ETH", "LTC"]
@@ -41,10 +42,15 @@ class CoinData {
                         }
                     }
                 }
+                self.delegate?.newPrices?()
             }
         }
     }
     
+}
+
+@objc protocol CoinDataDelegate: class {
+    @objc optional func newPrices()
 }
 
 class Coin {
