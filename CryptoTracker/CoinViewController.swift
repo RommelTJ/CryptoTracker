@@ -26,6 +26,8 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         edgesForExtendedLayout = []
         chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
         chart.yLabelsFormatter = { CoinData.shared.doubleToMoneyString(double: $1) }
+        chart.xLabels = [30, 25, 20, 15, 10, 5, 0]
+        chart.xLabelsFormatter = { String(Int(round(30 - $1))) + "d" }
         view.addSubview(chart)
     }
     
