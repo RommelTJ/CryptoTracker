@@ -12,6 +12,7 @@
 		B05401EB20AB34D60023770A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05401E920AB34D60023770A /* LaunchScreen.storyboard */; };
 		B09C48DB20AC87630090EDDD /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */; };
 		B09C48DD20AC89060090EDDD /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C48DC20AC89060090EDDD /* CoinData.swift */; };
+		B0B8154920B232C500B807F3 /* CoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8154820B232C500B807F3 /* CoinViewController.swift */; };
 		FEB72BF00B4642BD947533D1 /* Pods_CryptoTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF61B3BAB8D1EB75AD24A9B /* Pods_CryptoTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		B05401EC20AB34D60023770A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
 		B09C48DC20AC89060090EDDD /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
+		B0B8154820B232C500B807F3 /* CoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewController.swift; sourceTree = "<group>"; };
 		FBF61B3BAB8D1EB75AD24A9B /* Pods_CryptoTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				B05401E020AB34D40023770A /* AppDelegate.swift */,
+				B0B8154820B232C500B807F3 /* CoinViewController.swift */,
 				B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */,
 				B09C48DC20AC89060090EDDD /* CoinData.swift */,
 				B05401E720AB34D60023770A /* Assets.xcassets */,
@@ -202,6 +205,7 @@
 				B09C48DD20AC89060090EDDD /* CoinData.swift in Sources */,
 				B09C48DB20AC87630090EDDD /* CryptoTableViewController.swift in Sources */,
 				B05401E120AB34D40023770A /* AppDelegate.swift in Sources */,
+				B0B8154920B232C500B807F3 /* CoinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
