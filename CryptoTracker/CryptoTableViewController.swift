@@ -12,6 +12,7 @@ class CryptoTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoinData.shared.getPrices()
     }
 
     // MARK: - Table view data source
