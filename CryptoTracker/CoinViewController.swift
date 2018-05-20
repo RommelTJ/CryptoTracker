@@ -25,6 +25,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         view.backgroundColor = .white
         edgesForExtendedLayout = []
         chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
+        chart.yLabelsFormatter = { CoinData.shared.doubleToMoneyString(double: $1) }
         view.addSubview(chart)
     }
     
