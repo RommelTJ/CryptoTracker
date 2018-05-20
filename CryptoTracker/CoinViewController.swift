@@ -23,6 +23,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         coin?.getHistoricalData()
         
         view.backgroundColor = .white
+        edgesForExtendedLayout = []
         chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
         view.addSubview(chart)
     }
