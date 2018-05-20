@@ -7,30 +7,23 @@
 //
 
 import UIKit
+import SwiftChart
+
+private let chartHeight: CGFloat = 300.0
 
 class CoinViewController: UIViewController {
 
     var coin: Coin?
+    var chart = Chart()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
+        let series = ChartSeries([0, 6, 2, 8, 4, 7, 3, 10, 8])
+        series.color = ChartColors.greenColor()
+        chart.add(series)
+        view.addSubview(chart)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
