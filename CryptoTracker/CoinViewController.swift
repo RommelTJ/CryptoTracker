@@ -10,6 +10,7 @@ import UIKit
 import SwiftChart
 
 private let chartHeight: CGFloat = 300.0
+private let imageSize: CGFloat = 100.0
 
 class CoinViewController: UIViewController, CoinDataDelegate {
 
@@ -29,6 +30,10 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         chart.xLabels = [30, 25, 20, 15, 10, 5, 0]
         chart.xLabelsFormatter = { String(Int(round(30 - $1))) + "d" }
         view.addSubview(chart)
+        
+        let imageView = UIImageView(frame: CGRect(x: view.frame.size.width/2 - imageSize/2, y: chartHeight, width: imageSize, height: imageSize))
+        imageView.image = coin?.image
+        view.addSubview(imageView)
     }
     
     // MARK: - CoinDataDelegate
