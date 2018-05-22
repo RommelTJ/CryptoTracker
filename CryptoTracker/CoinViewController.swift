@@ -19,6 +19,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
     var chart = Chart()
     var priceLabel: UILabel = UILabel()
     var youOwnLabel = UILabel()
+    var worthLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,12 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             youOwnLabel.font = UIFont.boldSystemFont(ofSize: 20)
             youOwnLabel.textAlignment = .center
             view.addSubview(youOwnLabel)
+            
+            worthLabel.frame = CGRect(x: 0, y: chartHeight + imageSize + priceLabelHeight * 3, width: view.frame.size.width, height: priceLabelHeight)
+            worthLabel.text = coin.amountAsString()
+            worthLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            worthLabel.textAlignment = .center
+            view.addSubview(worthLabel)
         }
     }
     
