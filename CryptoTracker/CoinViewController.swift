@@ -11,6 +11,7 @@ import SwiftChart
 
 private let chartHeight: CGFloat = 300.0
 private let imageSize: CGFloat = 100.0
+private let priceLabelHeight: CGFloat = 25.0
 
 class CoinViewController: UIViewController, CoinDataDelegate {
 
@@ -34,6 +35,11 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         let imageView = UIImageView(frame: CGRect(x: view.frame.size.width/2 - imageSize/2, y: chartHeight, width: imageSize, height: imageSize))
         imageView.image = coin?.image
         view.addSubview(imageView)
+        
+        let priceLabel = UILabel(frame: CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight))
+        priceLabel.text = coin?.priceAsString()
+        priceLabel.textAlignment = .center
+        view.addSubview(priceLabel)
     }
     
     // MARK: - CoinDataDelegate
