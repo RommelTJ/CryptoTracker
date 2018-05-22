@@ -28,6 +28,8 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             CoinData.shared.delegate = self
             coin.getHistoricalData()
             
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
+            
             view.backgroundColor = .white
             edgesForExtendedLayout = []
             chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
@@ -55,6 +57,28 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             view.addSubview(worthLabel)
             
             newPrices()
+        }
+    }
+    
+    @objc func editTapped() {
+        if let coin = coin {
+            let alert = UIAlertController(title: "How much \(coin.symbol) do you own?", message: nil, preferredStyle: .alert)
+            alert.addTextField { (textField) in
+                textField.placeholder = "0.5"
+                textField.keyboardType = .decimalPad
+                
+            }
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                if let text = alert.textFields?.first?.text {
+                    if let amount = Double(text) {
+                        self.coin?.amount = amount
+                        self.newPrices()
+                    }
+                }
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
