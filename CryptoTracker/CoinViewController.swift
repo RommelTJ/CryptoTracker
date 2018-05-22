@@ -18,29 +18,38 @@ class CoinViewController: UIViewController, CoinDataDelegate {
     var coin: Coin?
     var chart = Chart()
     var priceLabel: UILabel = UILabel()
+    var youOwnLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoinData.shared.delegate = self
-        coin?.getHistoricalData()
-        
-        view.backgroundColor = .white
-        edgesForExtendedLayout = []
-        chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
-        chart.yLabelsFormatter = { CoinData.shared.doubleToMoneyString(double: $1) }
-        chart.xLabels = [30, 25, 20, 15, 10, 5, 0]
-        chart.xLabelsFormatter = { String(Int(round(30 - $1))) + "d" }
-        view.addSubview(chart)
-        
-        let imageView = UIImageView(frame: CGRect(x: view.frame.size.width/2 - imageSize/2, y: chartHeight, width: imageSize, height: imageSize))
-        imageView.image = coin?.image
-        view.addSubview(imageView)
-        
-        priceLabel.frame = CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight)
-        priceLabel.text = coin?.priceAsString()
-        priceLabel.textAlignment = .center
-        view.addSubview(priceLabel)
+        if let coin = coin {
+            CoinData.shared.delegate = self
+            coin.getHistoricalData()
+            
+            view.backgroundColor = .white
+            edgesForExtendedLayout = []
+            chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
+            chart.yLabelsFormatter = { CoinData.shared.doubleToMoneyString(double: $1) }
+            chart.xLabels = [30, 25, 20, 15, 10, 5, 0]
+            chart.xLabelsFormatter = { String(Int(round(30 - $1))) + "d" }
+            view.addSubview(chart)
+            
+            let imageView = UIImageView(frame: CGRect(x: view.frame.size.width/2 - imageSize/2, y: chartHeight, width: imageSize, height: imageSize))
+            imageView.image = coin.image
+            view.addSubview(imageView)
+            
+            priceLabel.frame = CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight)
+            priceLabel.text = coin.priceAsString()
+            priceLabel.textAlignment = .center
+            view.addSubview(priceLabel)
+            
+            youOwnLabel.frame = CGRect(x: 0, y: chartHeight + imageSize + priceLabelHeight * 2, width: view.frame.size.width, height: priceLabelHeight)
+            youOwnLabel.text = "You own: \(coin.amount) \(coin.symbol)"
+            youOwnLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            youOwnLabel.textAlignment = .center
+            view.addSubview(youOwnLabel)
+        }
     }
     
     // MARK: - CoinDataDelegate
