@@ -17,6 +17,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
 
     var coin: Coin?
     var chart = Chart()
+    var priceLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
         imageView.image = coin?.image
         view.addSubview(imageView)
         
-        let priceLabel = UILabel(frame: CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight))
+        priceLabel.frame = CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight)
         priceLabel.text = coin?.priceAsString()
         priceLabel.textAlignment = .center
         view.addSubview(priceLabel)
@@ -51,6 +52,10 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             chart.add(series)
         }
         
+    }
+    
+    func newPrices() {
+        priceLabel.text = coin?.priceAsString()
     }
 
 }
