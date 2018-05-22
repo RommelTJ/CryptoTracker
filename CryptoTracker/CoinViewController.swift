@@ -41,21 +41,20 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             view.addSubview(imageView)
             
             priceLabel.frame = CGRect(x: 0, y: chartHeight + imageSize, width: view.frame.size.width, height: priceLabelHeight)
-            priceLabel.text = coin.priceAsString()
             priceLabel.textAlignment = .center
             view.addSubview(priceLabel)
             
             youOwnLabel.frame = CGRect(x: 0, y: chartHeight + imageSize + priceLabelHeight * 2, width: view.frame.size.width, height: priceLabelHeight)
-            youOwnLabel.text = "You own: \(coin.amount) \(coin.symbol)"
             youOwnLabel.font = UIFont.boldSystemFont(ofSize: 20)
             youOwnLabel.textAlignment = .center
             view.addSubview(youOwnLabel)
             
             worthLabel.frame = CGRect(x: 0, y: chartHeight + imageSize + priceLabelHeight * 3, width: view.frame.size.width, height: priceLabelHeight)
-            worthLabel.text = coin.amountAsString()
             worthLabel.font = UIFont.boldSystemFont(ofSize: 20)
             worthLabel.textAlignment = .center
             view.addSubview(worthLabel)
+            
+            newPrices()
         }
     }
     
@@ -71,7 +70,11 @@ class CoinViewController: UIViewController, CoinDataDelegate {
     }
     
     func newPrices() {
-        priceLabel.text = coin?.priceAsString()
+        if let coin = coin {
+            priceLabel.text = coin.priceAsString()
+            youOwnLabel.text = "You own: \(coin.amount) \(coin.symbol)"
+            worthLabel.text = coin.amountAsString()
+        }
     }
 
 }
