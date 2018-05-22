@@ -66,7 +66,9 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             alert.addTextField { (textField) in
                 textField.placeholder = "0.5"
                 textField.keyboardType = .decimalPad
-                
+                if self.coin?.amountAsString() != "0.0" {
+                    textField.placeholder = String(coin.amount)
+                }
             }
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
