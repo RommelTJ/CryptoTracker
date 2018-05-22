@@ -30,8 +30,10 @@ class CoinViewController: UIViewController, CoinDataDelegate {
             
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
             
+            title = coin.symbol
             view.backgroundColor = .white
             edgesForExtendedLayout = []
+            
             chart.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: chartHeight)
             chart.yLabelsFormatter = { CoinData.shared.doubleToMoneyString(double: $1) }
             chart.xLabels = [30, 25, 20, 15, 10, 5, 0]
