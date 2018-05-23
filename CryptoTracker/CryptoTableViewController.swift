@@ -8,8 +8,14 @@
 
 import UIKit
 
+private let headerHeight: CGFloat = 100.0
+private let netWorthHeight: CGFloat = 45.0
+private let amountHeight: CGFloat = headerHeight - netWorthHeight
+
 class CryptoTableViewController: UITableViewController, CoinDataDelegate {
 
+    var amountLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CoinData.shared.getPrices()
@@ -18,6 +24,23 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     override func viewWillAppear(_ animated: Bool) {
         CoinData.shared.delegate = self
         tableView.reloadData()
+    }
+    
+    func createHeaderView() -> UIView {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: headerHeight))
+        headerView.backgroundColor = .white
+        
+        let netWorthLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: netWorthHeight))
+        netWorthLabel.text = "My Crypto Net Worth"
+        netWorthLabel.textAlignment = .center
+        headerView.addSubview(netWorthLabel)
+        
+        amountLabel.frame = CGRect(x: 0, y: netWorthHeight, width: view.frame.size.width, height: amountHeight)
+        amountLabel.textAlignment = .center
+        amountLabel.font = UIFont.boldSystemFont(ofSize: 60)
+        headerView.addSubview(amountLabel)
+        
+        return headerView
     }
 
     // MARK: - Table view data source
@@ -38,6 +61,14 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
         let coinVC = CoinViewController()
         coinVC.coin = CoinData.shared.coins[indexPath.row]
         navigationController?.pushViewController(coinVC, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return headerHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return createHeaderView()
     }
     
     // MARK: - Coin data delegate
