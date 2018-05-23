@@ -24,6 +24,7 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     override func viewWillAppear(_ animated: Bool) {
         CoinData.shared.delegate = self
         tableView.reloadData()
+        displayNetWorth()
     }
     
     func createHeaderView() -> UIView {
@@ -40,7 +41,13 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
         amountLabel.font = UIFont.boldSystemFont(ofSize: 60)
         headerView.addSubview(amountLabel)
         
+        displayNetWorth()
+        
         return headerView
+    }
+    
+    func displayNetWorth() {
+        amountLabel.text = CoinData.shared.netWorthAsString()
     }
 
     // MARK: - Table view data source
@@ -75,6 +82,7 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     
     func newPrices() {
         self.tableView.reloadData()
+        displayNetWorth()
     }
 
 }

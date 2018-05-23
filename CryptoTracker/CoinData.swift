@@ -58,6 +58,14 @@ class CoinData {
         }
     }
     
+    func netWorthAsString() -> String {
+        var netWorth = 0.0
+        for coin in coins {
+            netWorth += coin.amount * coin.price
+        }
+        return doubleToMoneyString(double: netWorth)
+    }
+    
 }
 
 @objc protocol CoinDataDelegate: class {
