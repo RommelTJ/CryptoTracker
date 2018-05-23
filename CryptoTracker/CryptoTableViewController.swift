@@ -59,7 +59,11 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let coin = CoinData.shared.coins[indexPath.row]
-        cell.textLabel?.text = "\(coin.symbol) - \(coin.priceAsString())"
+        if coin.amount != 0.0 {
+            cell.textLabel?.text = "\(coin.symbol) - \(coin.priceAsString()) - \(coin.amount)"
+        } else {
+            cell.textLabel?.text = "\(coin.symbol) - \(coin.priceAsString())"
+        }
         cell.imageView?.image = coin.image
         return cell
     }
