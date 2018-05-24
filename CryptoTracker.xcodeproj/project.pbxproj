@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03F005020B71140004654CE /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F004F20B71140004654CE /* AuthViewController.swift */; };
 		B05401E120AB34D40023770A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05401E020AB34D40023770A /* AppDelegate.swift */; };
 		B05401E820AB34D60023770A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05401E720AB34D60023770A /* Assets.xcassets */; };
 		B05401EB20AB34D60023770A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05401E920AB34D60023770A /* LaunchScreen.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		4E8410EB26C74C98CF9E1762 /* Pods-CryptoTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		840134D92BC0FC8BE51A5EA6 /* Pods-CryptoTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoTracker/Pods-CryptoTracker.release.xcconfig"; sourceTree = "<group>"; };
+		B03F004F20B71140004654CE /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		B05401DD20AB34D40023770A /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05401E020AB34D40023770A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B05401E720AB34D60023770A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				B05401E020AB34D40023770A /* AppDelegate.swift */,
+				B03F004F20B71140004654CE /* AuthViewController.swift */,
 				B0B8154820B232C500B807F3 /* CoinViewController.swift */,
 				B09C48DA20AC87630090EDDD /* CryptoTableViewController.swift */,
 				B09C48DC20AC89060090EDDD /* CoinData.swift */,
@@ -206,6 +209,7 @@
 			files = (
 				B09C48DD20AC89060090EDDD /* CoinData.swift in Sources */,
 				B09C48DB20AC87630090EDDD /* CryptoTableViewController.swift in Sources */,
+				B03F005020B71140004654CE /* AuthViewController.swift in Sources */,
 				B05401E120AB34D40023770A /* AppDelegate.swift in Sources */,
 				B0B8154920B232C500B807F3 /* CoinViewController.swift in Sources */,
 			);
