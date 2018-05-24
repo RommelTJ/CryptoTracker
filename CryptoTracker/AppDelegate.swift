@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Making the CryptoTableViewController as root view controller.
         window = UIWindow(frame: UIScreen.main.bounds)
-        let cryptoTableVC = CryptoTableViewController()
-        let navController = UINavigationController(rootViewController: cryptoTableVC)
-        window?.rootViewController = navController
+        
+        if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) && UserDefaults.standard.bool(forKey: "secure") {
+            // Authenticate VC
+            let authVC = AuthViewController()
+            window?.rootViewController = authVC
+        } else {
+            let cryptoTableVC = CryptoTableViewController()
+            let navController = UINavigationController(rootViewController: cryptoTableVC)
+            window?.rootViewController = navController
+        }
+        
         window?.makeKeyAndVisible()
         
         return true
