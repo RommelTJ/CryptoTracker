@@ -66,6 +66,24 @@ class CoinData {
         return doubleToMoneyString(double: netWorth)
     }
     
+    func html() -> String {
+        var html = "<h1>My Crypto Report</h1>"
+        html += "<h2>Net Worth: \(netWorthAsString())</h2>"
+        
+        // List of coins
+        html += "<ul>"
+        for coin in coins {
+            if coin.amount != 0.0 {
+                html += "<li>"
+                html += "\(coin.symbol) - I own: \(coin.amount) - Valued at: \(doubleToMoneyString(double: coin.amount * coin.price))"
+                html += "</li>"
+            }
+        }
+        html += "</ul>"
+        
+        return html
+    }
+    
 }
 
 @objc protocol CoinDataDelegate: class {

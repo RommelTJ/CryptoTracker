@@ -36,7 +36,7 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     
     @objc func reportTapped() {
         // Generate a PDF
-        let formatter = UIMarkupTextPrintFormatter(markupText: "Hello World")
+        let formatter = UIMarkupTextPrintFormatter(markupText: CoinData.shared.html())
         let render = UIPrintPageRenderer()
         render.addPrintFormatter(formatter, startingAtPageAt: 0)
         // A4 Format from StackOverflow.
