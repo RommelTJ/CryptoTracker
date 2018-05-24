@@ -20,6 +20,9 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         CoinData.shared.getPrices()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(reportTapped))
+        
         if LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             updateSecureButton()
         }
@@ -29,6 +32,10 @@ class CryptoTableViewController: UITableViewController, CoinDataDelegate {
         CoinData.shared.delegate = self
         tableView.reloadData()
         displayNetWorth()
+    }
+    
+    @objc func reportTapped() {
+        
     }
     
     func updateSecureButton() {
