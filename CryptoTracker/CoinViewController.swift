@@ -77,6 +77,7 @@ class CoinViewController: UIViewController, CoinDataDelegate {
                 if let text = alert.textFields?.first?.text {
                     if let amount = Double(text) {
                         self.coin?.amount = amount
+                        UserDefaults.standard.set(amount, forKey: coin.symbol + "amount")
                         self.newPrices()
                     }
                 }
